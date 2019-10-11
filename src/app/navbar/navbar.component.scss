@@ -1,3 +1,52 @@
 .text-orange{
     color: orange;
 }
+.pointer{
+    cursor: pointer;
+}
+nav{
+    background: rgb(9,9,121);
+    background: linear-gradient(180deg, rgba(9,9,121,1) 0%, rgba(76,76,173,1) 14%, rgba(212,212,249,1) 60%, rgba(222,222,255,1) 100%);
+    div.container{
+        button.navbar-toggler{
+            background-color: rgba(9,9,121,0.4);
+            color: white !important;
+            span.navbar-toggler-icon{
+                color: white !important;
+
+            }
+            &:hover{
+                background-color: rgba(9,9,121,0.7); 
+            }
+        }
+        .collapse{
+            ul{                
+                li.nav-item{
+                    background-color: rgba(9,9,121,0.4);
+                    border-radius: 5px;
+                    a.nav-link{
+                        color: white;
+                        
+                    } 
+                    &:hover{
+                        background-color: rgba(9,9,121,0.7);  
+                        -webkit-box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+                        -moz-box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+                        box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+                    }
+                }
+            }
+        }
+    }
+    a.navbar-brand{
+        background-color: rgba(9,9,121,0.5);
+        border-radius: 5px;
+        color: white;
+        &:hover{
+            background-color: rgba(9,9,121,0.7);  
+            -webkit-box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+            -moz-box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+            box-shadow: 0px 5px 5px -1px rgba(9,9,121,1);
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { HowWorksComponent } from './how-works/how-works.component';
 import { AfiliatedsComponent } from './afiliateds/afiliateds.component';
+import { PortalComponent } from './portal/portal.component';
 const routes: Routes = [
   {
     path: 'profile',
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'information/afiliated',
     component: AfiliatedsComponent
+  },
+  {
+    path: 'portal',
+    component: PortalComponent
   },
   {
     path: '**',

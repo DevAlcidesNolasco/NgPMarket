@@ -1,1 +1,52 @@
-<p>register works!</p>
+<form class="px-4 py-3">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group border-left border-warning pl-2">
+                <label for="inputNameRegister">Nombres</label>
+                <input type="text" class="form-control" id="inputNameRegister" [(ngModel)]="user.firstName"
+                    [ngModelOptions]="{standalone: true}" placeholder="Jhon Roberto">
+                <p>{{user.firstName}}</p>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group border-left border-warning pl-2">
+                <label for="inputSurnemaRegister">Apellidos</label>
+                <input type="text" class="form-control" id="inputSurnemaRegister" [(ngModel)]="user.lastName"
+                    [ngModelOptions]="{standalone: true}" placeholder="Saravia Fuentes">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group border-left border-warning pl-2">
+        <label for="inputEmailRegister"><i class="fas fa-at mr-2"></i>Correo
+            Electrónico</label>
+        <input type="email" class="form-control" id="inputEmailRegister" [(ngModel)]="user.email"
+            [ngModelOptions]="{standalone: true}" placeholder="email@example.com">
+        <p>{{user.email}}</p>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="form-group border-left border-warning pl-2">
+                <label for="inputPasswordRegister"><i class="fas fa-key mr-2"></i>Contraseña</label>
+                <input type="password" class="form-control" id="inputPasswordRegister" [(ngModel)]="user.password"
+                    [ngModelOptions]="{standalone: true}" placeholder="$my%password">
+            </div>
+        </div>
+        <!--<div class="col-lg-6">
+            <div class="form-group border-left border-warning pl-2">
+                <label for="inputRewritteRegister"><i class="fas fa-redo mr-2"></i>Reescribir</label>
+                <input type="password" class="form-control" id="inputRewritteRegister" placeholder="$my%password">
+            </div>
+        </div>-->
+    </div>
+    <!--<div class="frm-grup border-left border-warning pl-2 mb-3">
+        <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="inputCheckConditions">
+            <label class="custom-control-label" for="inputCheckConditions">Tengo mas de 18 años y acepto los <a
+                    href="#">terminos y condiciones</a>.</label>
+        </div>
+    </div>-->
+
+    <button type="submit" class="btn btn-success"><i class="fas fa-user-plus mr-2"></i>Registrarme</button>
+</form>
