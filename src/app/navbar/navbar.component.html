@@ -1,7 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-light shadow-sm sticky-top">
     <div class="container">
-        <a class="navbar-brand px-2" routerLink="/"><i
-                class="fas fa-map-marked-alt mr-2"></i>HappyEnding</a>
+        <a class="navbar-brand px-2" routerLink="/"><i class="fas fa-map-marked-alt mr-2"></i>HappyEnding</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -17,38 +16,15 @@
                         Información
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" routerLink="/information/how-works"
-                            routerLinkActive="active"><i class="fas fa-question mr-2 text-orange"></i>Como funciona?</a>
-                        <a class="dropdown-item" routerLink="/information/afiliated"
-                            routerLinkActive="active"><i class="far fa-check-circle mr-2 text-success"></i>Afíliate!</a>
+                        <a class="dropdown-item" routerLink="/information/how-works" routerLinkActive="active"><i
+                                class="fas fa-question mr-2 text-orange"></i>Como funciona?</a>
+                        <a class="dropdown-item" routerLink="/information/afiliated" routerLinkActive="active"><i
+                                class="far fa-check-circle mr-2 text-success"></i>Afíliate!</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" >Something else here</a>
+                        <a class="dropdown-item">Something else here</a>
                     </div>
-                </li>
-                <li  class="nav-item dropdown dropleft m-1 px-1">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user mr-2"></i>Entrar
-                    </a>
-                    <div class="dropdown-menu">
-                        <app-login></app-login>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" routerLink="/portal" routerLinkActive="active" href="#">Aun no tienes
-                            cuenta? Registrate ahora!</a>
-                    </div>
-                </li>
-                <ng-template #showUser>
-                    <li class="nav-item dropdown m-1 px-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user mr-2"></i>Perfil
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item pointer"><i class="far fa-smile mr-2 text-success"></i>Ver perfil</a>
-                            <a class="dropdown-item bg-danger text-white pointer"><i class="far fa-times-circle mr-2"></i>Cerrar Sesión</a>
-                        </div>
-                    </li>
-                </ng-template>
+                </li>  
+                <app-login></app-login>              
             </ul>
         </div>
     </div>

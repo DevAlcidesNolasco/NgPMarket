@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthGService } from '../auth/auth-g.service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-profile',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor() { }
+  constructor(
+    public auth: AuthGService
+  ) { }
 
   ngOnInit() {
   }

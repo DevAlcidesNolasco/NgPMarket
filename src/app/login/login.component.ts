@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
-import { User } from '../models/user';
+import { AuthGService } from '../auth/auth-g.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  public user: User;
-  public email;
-  public password;
+export class LoginComponent implements OnInit {  
 
-  constructor(public afAuth: AngularFireAuth) { }
+  constructor(
+    public auth: AuthGService
+  ) { }
 
   ngOnInit() {
-    this.user = new User('', '', '', '');
   }
-
+  //[(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
 }

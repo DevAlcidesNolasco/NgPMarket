@@ -1,16 +1,20 @@
-<form class="px-4 py-3">
-    <div class="form-group border-left border-primary pl-2">
-        <label for="inputEmailLogin"><i class="fas fa-user mr-2"></i>Correo
-            Electrónico</label>
-        <input type="email" class="form-control" [(ngModel)]="user.email" name="email" [ngModelOptions]="{standalone: true}" placeholder="email@example.com">
+<li *ngIf="auth.user$ | async as user; else shwProfile" class="nav-item dropdown dropleft m-1 px-1 pointer">
+    <a class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="{{ user.photoURL }}" width="25" height="25" class="rounded-circle mr-2" alt="">{{ user.displayName }}
+    </a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/profile" routerLinkActive="active"><i class="fas fa-id-badge mr-2"></i>Ver
+            Perfil</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item">
+            <button class="btn btn-danger" (click)="auth.signOut()"><i class="far fa-times-circle mr-2"></i>Cerrar
+                Sesion</button>
+        </a>
     </div>
-    <div class="form-group border-left border-primary pl-2">
-        <label for="inputPasswordLogin"><i class="fas fa-key mr-2"></i>Contraseña</label>
-        <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="$my%password">
-    </div>
-    <p>{{user.email}}</p>
-    <p>{{user.password}}</p>
-    <button type="button" class="btn btn-primary"><i class="fas fa-sign-in-alt mr-2"></i>Iniciar
-        Sesion</button>
-</form>
-<a class="mx-4" href="#"><i class="far fa-frown mr-2"></i>Olvidaste la contraseña?</a>
+</li>
+
+<ng-template #shwProfile>
+    <button type="button" class="btn btn-light nav-item" (click)="auth.googleSignin()"><i class="fab fa-google mr-2"></i>Iniciar
+        con
+        Google</button>
+</ng-template>
