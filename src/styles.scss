@@ -1,4 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+$moradoApp: #090979;
 @font-face{
     font-family: "Poppins";
     src: url(assets/fonts/Poppins/Poppins-Regular.ttf);
@@ -10,5 +10,5 @@
     cursor: pointer;
 }
 .border-bottom{
-    border-bottom-color: #090979 !important;
+    border-bottom-color: $moradoApp !important;
 }

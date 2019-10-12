@@ -1,1 +1,37 @@
-<p>how-works works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 my-2">
+            <img src="https://dev.act365.com/wp-content/uploads/2019/02/Implementing-a-sales-process.png"
+                class="img-fluid" alt="">
+            <h2>Como funciona nuestro servicio?</h2>
+            <p>
+                Uno de nuestros principales objetivos es mostrarle a la gente que si puede comprar a los precios mas
+                bajos que se encuentran en tu region.
+            </p>
+        </div>
+        <div class="col-lg-4 my-2">
+            <button class="btn btn-secondary my-2 d-block d-sm-none mx-auto" (click)="scrollDown()"><i class="fas fa-angle-double-down mr-2"></i>Saltar Comentarios<i class="far fa-comments ml-2"></i></button>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let comentss of lista" class="list-group-item">
+                    {{ comentss.rating }}
+                    <p class="border-bottom stars-rating d-flex justify-content-between py-2 mx-3" rating="comentss.rating">
+                        <i class="star fas fa-star text-warning mx-1" rating="1"></i>
+                        <i class="star fas fa-star text-warning mx-1" rating="2"></i>
+                        <i class="star fas fa-star text-warning mx-1" rating="3"></i>
+                        <i class="star fas fa-star-half-alt text-warning mx-1" rating="4"></i>
+                        <i class="star far fa-star text-warning mx-1" rating="5"></i>
+                    </p>
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0" *ngIf="comentss.comment">{{comentss.comment}}</p>
+                        <footer class="blockquote-footer">{{comentss.uid}}, el <cite title="Source Title">{{comentss.date}}</cite>
+                        </footer>
+                    </blockquote>
+                </li>
+            </ul>
+        </div>
+        <div class="col-12 banner my-2" id="banner">
+            <p class="text-center">Recuerda que somos tu mejor opcion para cuidar tu bolsillo!</p>
+            <h2 class="display-3 text-center">ASOCIATE!</h2>
+        </div>
+    </div>
+</div>

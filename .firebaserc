@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "happyend-b2817": {
+      "hosting": {
+        "app-try": [
+          "happyend-b2817"
+        ]
+      }
+    }
+  }
+}

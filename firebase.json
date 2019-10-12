@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "app-try",
+      "public": "dist/app-try",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

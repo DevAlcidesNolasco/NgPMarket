@@ -4,10 +4,12 @@ import { ProfileComponent } from './profile/profile.component';
 import { HomeComponent } from './home/home.component';
 import { HowWorksComponent } from './how-works/how-works.component';
 import { AfiliatedsComponent } from './afiliateds/afiliateds.component';
+import { AuthGuard } from './auth/auth.guard';
 const routes: Routes = [
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',
