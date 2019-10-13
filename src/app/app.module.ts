@@ -15,6 +15,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { CommentsListComponent } from './comments-list/comments-list.component';
+import { CommentComponent } from './comment/comment.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { environment } from 'src/environments/environment';
     HomeComponent,
     HowWorksComponent,
     AfiliatedsComponent,
-    LoginComponent
+    LoginComponent,
+    CommentsListComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
