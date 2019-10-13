@@ -1,6 +1,6 @@
 $moradoApp: #090979;
 ul.list-group.list-group-flush {
-  max-height: 85vh;
+  max-height: 65vh;
   overflow-y: auto;
   border-top-style: solid;
   border-top-color: $moradoApp !important;
@@ -10,7 +10,12 @@ ul.list-group.list-group-flush {
   border-bottom-width: 2px !important;
   li {
     p.stars-rating {
-      border-image: linear-gradient(to right, #ff0000 0%, #ffee02 50%, #34ff02 100%) !important;
+      border-image: linear-gradient(
+        to right,
+        #ff0000 0%,
+        #ffee02 50%,
+        #34ff02 100%
+      ) !important;
       border-image-slice: 1 !important;
       border-width: 3px !important;
       font-size: 25px !important;
@@ -33,6 +38,30 @@ ul.list-group.list-group-flush {
     border-bottom-width: 7px !important;
   }
 }
-.container{
-    scroll-behavior: smooth;
+form {
+  div.stars-rating {
+    border-image: linear-gradient(
+      to right,
+      #ff0000 0%,
+      #ffee02 50%,
+      #34ff02 100%
+    ) !important;
+    border-image-slice: 1 !important;
+    border-width: 7px !important;
+    i {
+      cursor: pointer;
+      border: 1px solid red;
+      font-size: 1.3rem;
+      &:hover {
+        text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+form div.stars-rating i:hover{
+  text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3) !important;
+  
+}
+textarea {
+  resize: none;
 }

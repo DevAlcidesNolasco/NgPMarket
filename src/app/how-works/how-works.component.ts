@@ -38,7 +38,7 @@ export class HowWorksComponent implements OnInit {
   async getComments (){
     await this.comments.comments$.subscribe(comments => {
       this.lista = comments;
-      console.log(this.lista);
+      //console.log(this.lista);
     });
   }
 }
