@@ -11,15 +11,15 @@ export class CommentsListComponent implements OnInit {
   lista: Comment[];
   constructor(
     public comments: CommentsService
-  ) { }
-
-  ngOnInit() {
-    this.getComments();
-  }
-  async getComments() {
-    await this.comments.comments$.subscribe(comments => {
+  ) {
+    this.comments.comments$.subscribe(comments => {
       this.lista = comments;
-      //console.log(this.lista);
     });
   }
+  ngOnInit() {
+  //  this.getComments();
+  }
+  //async getComments() {
+    //await 
+  //}
 }

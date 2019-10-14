@@ -7,27 +7,26 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
   providedIn: 'root'
 })
 export class CommentsService {
-  commentsCollection: AngularFirestoreCollection<Comment>;
   comments$: Observable<Comment[]>;
   constructor(
     private afs: AngularFirestore
   ) {
-    this.commentsCollection = afs.collection<Comment>(`Comments/`);
-    this.comments$ = this.commentsCollection.valueChanges();
+    let commentsCollection: AngularFirestoreCollection<Comment>;
+    commentsCollection = afs.collection<Comment>(`Comments/`);
+    this.comments$ = commentsCollection.valueChanges();
   }
-  updateComment({uid, date, rating, displayName, comment}: Comment){
-    const commentRef: AngularFirestoreDocument<Comment> = this.afs.doc(`Comments/${uid}`);    
+  updateComment(uid: string, { displayName, rating, date, comment }: Comment) {
+    let commentRef = this.afs.doc<Comment>(`Comments/${uid}`);
     const data = {
-      uid,
-      date,
-      displayName,
-      comment,
-      rating
+      displayName, 
+      rating, 
+      date, 
+      comment
     }
-    return commentRef.set(data, {merge: true});
+    return commentRef.set(data);
   }
-  getMyComment(uid:string){
-    const commentRef: AngularFirestoreDocument<Comment> = this.afs.doc(`Comments/${uid}`);   
+  getMyComment(uid: string) {
+    let commentRef: AngularFirestoreDocument<Comment> = this.afs.doc<Comment>(`Comments/${uid}`);
     return commentRef.valueChanges();
   }
 }

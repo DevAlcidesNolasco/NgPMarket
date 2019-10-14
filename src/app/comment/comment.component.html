@@ -11,7 +11,7 @@
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Describe tu experiencia con nosotros. (Opcional)</label>
             <textarea class="form-control border border-dark" rows="3" placeholder="Cuéntanos, como te fué?"
-                [(ngModel)]="comentario.comment" [ngModelOptions]="{standalone: true}"></textarea>
+                [(ngModel)]="comentario && comentario.comment" [ngModelOptions]="{standalone: true}"></textarea>
         </div>
         <button (click)="submitComment()">Enviar comentario!</button>
     </div>

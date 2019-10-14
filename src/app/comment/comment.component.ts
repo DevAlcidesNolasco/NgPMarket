@@ -10,23 +10,26 @@ import { CommentsService } from '../services/comments.service';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
-  public comentario: Comment;
-  user: User;
+  public comentario: Comment = new Comment("", null, "", "");
+  public user: User;
   constructor(
     public auth: AuthGService,
     public comments: CommentsService
-  ) { }
-
-  ngOnInit() {
-    this.comentario = new Comment("", 0, "", "");
+  ) {
     this.auth.user$.subscribe(user => {
       if (user) {
         this.user = user;
         this.comments.getMyComment(this.user.uid).subscribe(comment => {
-          this.comentario = comment;
+          if (comment) {
+            this.comentario = comment;
+          } else {
+            this.comentario = new Comment("", null, "", "");
+          }
         });
       }
-    });    
+    });
+  }
+  ngOnInit() {
   }
   submitComment() {
     const date = new Date;
@@ -35,8 +38,9 @@ export class CommentComponent implements OnInit {
     const year = date.getFullYear();
     const dateToSubmit = `${day}/${month}/${year}`;
     this.comentario.date = dateToSubmit;
-    this.comments.updateComment(this.comentario);
-    this.comentario = new Comment(this.user.uid, 0, "", this.user.displayName, "");
+    this.comentario.displayName = this.user.displayName;
+    console.log(this.comentario);
+    this.comments.updateComment(this.user.uid, this.comentario);
   }
 
 }
