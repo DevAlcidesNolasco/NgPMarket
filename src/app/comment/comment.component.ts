@@ -10,6 +10,7 @@ import { CommentsService } from '../services/comments.service';
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent implements OnInit {
+  public sendEd: boolean = false;
   public comentario: Comment = new Comment("", null, "", "");
   public user: User;
   constructor(
@@ -29,7 +30,7 @@ export class CommentComponent implements OnInit {
       }
     });
   }
-  ngOnInit() {
+  ngOnInit() {    
   }
   submitComment() {
     const date = new Date;
@@ -39,8 +40,26 @@ export class CommentComponent implements OnInit {
     const dateToSubmit = `${day}/${month}/${year}`;
     this.comentario.date = dateToSubmit;
     this.comentario.displayName = this.user.displayName;
-    console.log(this.comentario);
-    this.comments.updateComment(this.user.uid, this.comentario);
+    let envio = this.comments.updateComment(this.user.uid, this.comentario);
+    if (envio) {
+      this.sendEd = true;
+      setTimeout(() => {
+        this.sendEd = false;
+      }, 5000);
+    }
   }
-
+  setRAting(rating: number) {
+    this.comentario.rating = rating;
+    console.log(this.comentario);
+    var starts = document.querySelectorAll("i.my-stars");
+    console.log(starts);
+    for (var i = 1; i <= 5; i++) {
+      if (rating >= i) {
+        
+        $(".star:nth-child(" + i + ")").prop('class', "star fas fa-star text-warning mx-1");
+      } else {
+        $(".star:nth-child(" + i + ")").prop('class', "star far fa-star text-warning mx-1");
+      }
+    }
+  }
 }
