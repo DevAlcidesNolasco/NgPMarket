@@ -53,13 +53,13 @@ export class CommentComponent implements OnInit {
     console.log(this.comentario);
     var starts = document.querySelectorAll("i.my-stars");
     console.log(starts);
-    for (var i = 1; i <= 5; i++) {
+    /*for (var i = 1; i <= 5; i++) {
       if (rating >= i) {
         
         $(".star:nth-child(" + i + ")").prop('class', "star fas fa-star text-warning mx-1");
       } else {
         $(".star:nth-child(" + i + ")").prop('class', "star far fa-star text-warning mx-1");
       }
-    }
+    }*/
   }
 }
