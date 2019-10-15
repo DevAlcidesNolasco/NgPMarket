@@ -16,7 +16,7 @@
         <div *ngIf="sendEd" class="alert alert-success" role="alert">
             <i class="fas fa-flag-checkered mr-2"></i>Se te agradece! Tu calificación ha sido enviada!
         </div>
-        <button (click)="submitComment()">Enviar comentario!</button>
+        <button class="btn btn-success" (click)="submitComment()"><i class="fas fa-bullhorn mr-2"></i>Enviar comentario!</button>
     </div>
     <ng-template #loginPlease>
         <p><i class="far fa-hand-paper mr-2 text-danger"></i>Para calificarnos necesitas iniciar sesion en la
