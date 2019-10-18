@@ -17,6 +17,8 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
 import { CommentsListComponent } from './comments-list/comments-list.component';
 import { CommentComponent } from './comment/comment.component';
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,15 +29,19 @@ import { CommentComponent } from './comment/comment.component';
     AfiliatedsComponent,
     LoginComponent,
     CommentsListComponent,
-    CommentComponent
+    CommentComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AgmCoreModule.forRoot({
+      apiKey: environment.googleMapsKey
+    }),
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
+    //AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule
   ],

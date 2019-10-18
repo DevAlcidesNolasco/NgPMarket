@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { HowWorksComponent } from './how-works/how-works.component';
 import { AfiliatedsComponent } from './afiliateds/afiliateds.component';
 import { AuthGuard } from './auth/auth.guard';
+import { MapComponent } from './map/map.component';
 const routes: Routes = [
   {
     path: 'profile',
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'information/how-works',
     component: HowWorksComponent
+  },
+  {
+    path: 'map',
+    component: MapComponent
   },
   {
     path: 'information/afiliated',

@@ -8,5 +8,6 @@ export const environment = {
     storageBucket: "happyend-b2817.appspot.com",
     messagingSenderId: "925930387998",
     appId: "1:925930387998:web:eefdf8e35ac18a2ee1cc0f"
-  }
+  },
+  googleMapsKey: 'AIzaSyB4HCyB5hFbmkOBEUg92yYIY-RKkCMX_5s'
 };
