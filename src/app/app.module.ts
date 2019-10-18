@@ -41,7 +41,7 @@ import { MapComponent } from './map/map.component';
       apiKey: environment.googleMapsKey
     }),
     AngularFireAuthModule,
-    //AngularFireDatabaseModule,
+    AngularFireDatabaseModule,
     AngularFireStorageModule,
     AngularFirestoreModule
   ],
