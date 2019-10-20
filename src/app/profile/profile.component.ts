@@ -10,7 +10,8 @@ import { User } from '../models/user';
 export class ProfileComponent implements OnInit {
   constructor(
     public auth: AuthGService
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
   }

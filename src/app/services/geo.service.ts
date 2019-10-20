@@ -25,6 +25,7 @@ export class GeoService {
       radius: radius
     }).on('key_entered', (key, location, distance) => {
       let hit ={
+        key: key,
         location: location,
         distance: distance
       }

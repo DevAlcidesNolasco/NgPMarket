@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GeoService } from '../services/geo.service';
+import { User } from '../models/user';
+import { AuthGService } from '../auth/auth-g.service';
 
 @Component({
   selector: 'app-map',
@@ -7,12 +9,18 @@ import { GeoService } from '../services/geo.service';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+  user: User;
   lat: number;
   lng: number;
   markers: any;
   constructor(
-    private geo: GeoService
-  ) { }
+    private geo: GeoService,
+    private auth: AuthGService
+  ) {
+    this.auth.user$.subscribe(user => {
+      this.user =  user;
+    }); 
+   }
 
   ngOnInit() {
     this.getUserLocation();
