@@ -1,20 +1,27 @@
-<div *ngIf="lat && lng">
-    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
-        <agm-marker [latitude]="lat" [longitude]="lng">
-            <agm-info-window>
-                <h3>{{user.displayName}}</h3>
-                <p>Estas justo aqui!</p>
-            </agm-info-window>
-        </agm-marker>
-        <agm-marker *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]"
-            [iconUrl]="'https://cdn1.iconfinder.com/data/icons/designer-s-tools-1/512/Coffee-64.png'">
+<div *ngIf="lat && lng" class="card shadow rounded m-0 p-0">
+    <div class="card-body m-0 p-0">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+            <agm-marker [latitude]="lat" [longitude]="lng">
+                <agm-info-window>
+                    <h4><i class="fas fa-user mr-2 text-primary"></i>{{ user.displayName }}</h4>
+                    <h5>Estas justo aqui!</h5>
+                </agm-info-window>
+            </agm-marker>
+            <agm-marker *ngFor="let marker of markers" [latitude]="marker.location[0]" [longitude]="marker.location[1]"
+                [iconUrl]="'https://cdn1.iconfinder.com/data/icons/designer-s-tools-1/512/Coffee-64.png'">
+                <agm-info-window>
+                    <h4><strong>{{ marker.key }}</strong></h4>
+                    <h5>Estas a {{ marker.distance | number : '1.1-1' }} kilometros de este punto.</h5>
+                </agm-info-window>
+            </agm-marker>
+        </agm-map>
+    </div>
 
-            <agm-info-window>                
-                <h3><strong>{{ marker.key }}</strong></h3>
-
-                <p>Estas a {{ marker.distance | number : '1.1-1' }} kilometros de este punto.</p>
-            </agm-info-window>
-
-        </agm-marker>
-    </agm-map>
+</div>
+<div *ngIf="markers" class="row border-danger my-3">
+    <div *ngFor="let marker of markers" class="col-md-4">
+        <div class="card shadow">
+            <div class="card-body">{{ marker.key }}</div>
+        </div>
+    </div>
 </div>

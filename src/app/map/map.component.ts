@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GeoService } from '../services/geo.service';
 import { User } from '../models/user';
 import { AuthGService } from '../auth/auth-g.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'app-map',
@@ -25,6 +26,7 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.getUserLocation();
     this.geo.hits.subscribe(hits => this.markers = hits);
+    this.getAddress();
     //this.geo.setLocation("Parque La Familia", [13.338545, -87.839960]);
   }
 
@@ -33,9 +35,23 @@ export class MapComponent implements OnInit {
       navigator.geolocation.getCurrentPosition(position => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
-        this.geo.getLocations(100, [this.lat, this.lng]);
+        this.geo.getLocations(5, [this.lat, this.lng]);
       });
     }
   }
-
+  //[latitude, longitude]: Array<number>
+  async getAddress(){
+    Object.entries(await this.markers).map(([key, val]) => {
+      console.log(val);
+    });
+    this.markers.forEach(element =>  {
+      console.log(element);
+    });
+    //let coords = {
+      //lat: latitude,
+     // lon: longitude
+    //}
+    //console.log(coords);
+  }
+  
 }
