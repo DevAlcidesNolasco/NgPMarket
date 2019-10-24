@@ -3,6 +3,7 @@ import { GeoService } from '../services/geo.service';
 import { User } from '../models/user';
 import { AuthGService } from '../auth/auth-g.service';
 import { element } from 'protractor';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-map',
@@ -10,16 +11,16 @@ import { element } from 'protractor';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
-  user: User;
-  lat: number;
-  lng: number;
-  markers: any;
+  public user: User;
+  public lat: number;
+  public lng: number;
+  public markers: any;
   constructor(
     private geo: GeoService,
     private auth: AuthGService
   ) {
     this.auth.user$.subscribe(user => {
-      this.user =  user;
+      this.user = user;
     }); 
    }
 

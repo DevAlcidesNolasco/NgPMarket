@@ -1,0 +1,9 @@
+<div class="dropzone" appDropzone (hovered)="toggleHover($event)" (dropped)="onDrop($event)" [class.hovering]="isHovering">
+    <h3>Arrastra tus archivos</h3>
+    <label class="file-label">
+        <input type="file" class="file" (change)="onDrop($event.target.files)">
+    </label>
+</div>
+<div *ngFor="let file of files">
+    <app-upload-task [file]="file"></app-upload-task>
+</div>

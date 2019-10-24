@@ -19,6 +19,10 @@ import { CommentsListComponent } from './comments-list/comments-list.component';
 import { CommentComponent } from './comment/comment.component';
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './map/map.component';
+import { EnterpriseComponent } from './enterprise/enterprise.component';
+import { DropzoneDirective } from './dropzone.directive';
+import { UploaderComponent } from './enterprise/uploader/uploader.component';
+import { UploadTaskComponent } from './enterprise/upload-task/upload-task.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +34,11 @@ import { MapComponent } from './map/map.component';
     LoginComponent,
     CommentsListComponent,
     CommentComponent,
-    MapComponent
+    MapComponent,
+    EnterpriseComponent,
+    DropzoneDirective,
+    UploaderComponent,
+    UploadTaskComponent
   ],
   imports: [
     BrowserModule,

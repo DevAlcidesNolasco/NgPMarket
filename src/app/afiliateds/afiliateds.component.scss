@@ -1,0 +1,120 @@
+$moradoApp: #090979;
+$morado-sec: #4e4ecf;
+$secundario: #a6a6f1;
+$secundario-sec: #fff;
+.card.primario {
+  background: linear-gradient(to right, $moradoApp, $morado-sec);
+  img {
+    background: rgba(#9e9e9e, 0.4);
+  }
+  .card-body {
+    h3 {
+      border-bottom-color: #fff;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: justify;
+    }
+    .card {
+      background: transparent;
+      border: white 2px solid;
+    }
+    .accordion {
+      .card {
+        .collapse {
+          .card-body {
+            .list-group {
+              border-radius: 10px;
+              border: 1px white solid;
+              li {
+                background: rgba(#000000, 0.5);
+                &:nth-child(1) {
+                  border-radius: 10px 10px 0 0;
+                }
+                &:last-child {
+                  border-radius: 0 0 10px 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  * {
+    color: #fff;
+  }
+}
+.card.secundario {
+  background: linear-gradient(to right, $secundario, $secundario-sec);
+  img {
+    background: rgba(#9e9e9e, 0.4);
+  }
+  .card-body {
+    h3 {
+      border-bottom-color: #fff;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: justify;
+    }
+    .card {
+      background: transparent;
+      border: white 2px solid;
+    }
+    .accordion {
+      .card {
+        .collapse {
+          .card-body {
+            .list-group {
+              border-radius: 10px;
+              border: 2px $moradoApp solid;
+              li {
+                background: rgba(#000000, 0.5);
+                color: white;
+                &:nth-child(1) {
+                  border-radius: 10px 10px 0 0;
+                }
+                &:last-child {
+                  border-radius: 0 0 10px 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  * {
+    color: #000;
+  }
+}
+.card.secundario.planiacion {
+  .card-body {
+    h3 {
+      border-bottom-color: #fff;
+      border-bottom-style: solid;
+      border-bottom-width: 2px;
+    }
+    p {
+      font-size: 1.2rem;
+      text-align: justify;
+    }
+    .card {
+      background: rgba(#c4c4c4, 0.7);
+      border: $moradoApp 2px solid;
+      .card-body {
+        h5 {
+          font-size: 1.3rem;
+        }
+      }
+      * {
+        color: $moradoApp;
+      }
+    }
+  }
+}
