@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { AngularFireDatabase } from '@angular/fire/database';
 import { ProductsService } from '../services/products.service';
 
 @Component({
@@ -16,11 +15,10 @@ export class SearchComponent implements OnInit {
   productList: any[];
   constructor(
     private route: ActivatedRoute,
-    private afs: AngularFireDatabase,
     public prd: ProductsService
   ) {    
     this.producto = this.route.snapshot.params.producto;
-    console.log(this.producto);
+    this.prd.search(this.producto);
     this.prd.products$.subscribe(pprds => {
       console.log(pprds);
     });

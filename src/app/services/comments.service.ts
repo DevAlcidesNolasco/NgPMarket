@@ -12,7 +12,7 @@ export class CommentsService {
     private afs: AngularFirestore
   ) {
     let commentsCollection: AngularFirestoreCollection<Comment>;
-    commentsCollection = afs.collection<Comment>(`Comments/`);
+    commentsCollection = afs.collection<Comment>(`Comments/`, ref => ref.orderBy("date"));
     this.comments$ = commentsCollection.valueChanges();
   }
   updateComment(uid: string, { displayName, rating, date, comment }: Comment) {

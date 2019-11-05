@@ -3,7 +3,6 @@ import { AngularFireUploadTask, AngularFireStorage } from '@angular/fire/storage
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { tap, finalize } from 'rxjs/operators';
-import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-upload-task',
@@ -12,6 +11,7 @@ import { async } from '@angular/core/testing';
 })
 export class UploadTaskComponent implements OnInit {
   @Input() file: File;
+  @Input() idProduct: string;
   task: AngularFireUploadTask;
   percentage: Observable<number>;
   snapshot: Observable<any>;
@@ -25,7 +25,7 @@ export class UploadTaskComponent implements OnInit {
     this.startUpload();
   }
   startUpload() {
-    const path = `test/${Date.now()}_${this.file.name}`;
+    const path = `Files/${Date.now()}_${this.file.name}`;
     const ref = this.storage.ref(path);
     this.task = this.storage.upload(path, this.file);
     this.percentage = this.task.percentageChanges();
@@ -33,7 +33,7 @@ export class UploadTaskComponent implements OnInit {
       tap(console.log),
       finalize(async () => {
         this.downloadURL = await ref.getDownloadURL().toPromise();
-        this.db.collection("files").add({
+        this.db.collection("files").doc(`${this.idProduct}`).set({
           downloadURL: this.downloadURL,
           path
         });

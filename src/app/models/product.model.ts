@@ -1,9 +1,11 @@
 export class Product {
     constructor(
         name: string,
-        price: number,
-        location: Array<number>,
+        key_words: Array<string>,
+        price: number,        
         type: string,
-        ubication: string
+        location?: Array<number>,
+        ubication?: string,
+        photos?: Array<String>
     ){}
 }

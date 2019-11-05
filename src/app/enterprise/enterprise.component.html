@@ -1,6 +1,36 @@
 <div class="container">
-    <form action="">
-        
-    </form>
-    <app-uploader></app-uploader>
+    <div class="row">
+        <div class="col">
+            <form class="p-3 my-3">
+                {{product | json}}
+                <div class="form-group">
+                    <input type="text" name="name" [(ngModel)]="product.name" class="form-control"
+                        placeholder="Nombre del Producto">
+                </div>
+                <div class="form-group ">
+                    <input type="number" name="price" [(ngModel)]="product.price" step="0.01" min="0"
+                        class="form-control" placeholder="Precio del Producto">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="ubication" [(ngModel)]="product.ubication" class="form-control"
+                        placeholder="Ubication">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="type" [(ngModel)]="product.type" class="form-control" placeholder="Tipo">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="location" [(ngModel)]="product.location" class="form-control"
+                        placeholder="Location">
+                </div>
+                <div class="form-group">
+                    <label>Subir Imagenes</label>
+                    <app-uploader></app-uploader>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-lg btn-primary" (click)="create()">Crear</button>
+                    <button type="button" class="btn btn-lg btn-success" *ngIf="idProduct" (click)="saveProduct()">Guardar Imagenes</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

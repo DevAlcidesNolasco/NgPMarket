@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from '../models/product.model';
+import { ProductsService } from '../services/products.service';
 
 @Component({
   selector: 'app-enterprise',
@@ -6,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./enterprise.component.scss']
 })
 export class EnterpriseComponent implements OnInit {
-  constructor() { }
+  public product: Product = new Product("", [], 0, "", [], "");
+  public idProduct: string; 
+  constructor(
+    private prodService: ProductsService
+  ) { }
 
   ngOnInit() {
+    console.log(this.product);
+  }
+  create(){
+    this.idProduct = this.prodService.addProduct(this.product);
+  }
+  saveProduct(){
+    console.log(this.product);
   }
 
 }

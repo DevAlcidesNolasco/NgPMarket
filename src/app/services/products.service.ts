@@ -7,11 +7,22 @@ import { Product } from '../models/product.model';
   providedIn: 'root'
 })
 export class ProductsService {
-  products$: Observable<Product[]>
+  products$: Observable<Product[]>;
   constructor(
     private afs: AngularFirestore
   ) {
-    let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection(`Products`, ref => ref.orderBy("name"));
-    this.products$ = prodcuts.valueChanges(["added", "removed"]);
   }
+  search(search: string) {
+    let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection<Product>(`Products`, ref => ref.where("key_words", "array-contains", search));
+    this.products$ = prodcuts.valueChanges();
+  }
+  addProduct({name,key_words,price,type}: Product){
+  const id = this.afs.createId();
+  let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection<Product>(`Products`);
+  const data = {
+    name, key_words, price, type
+  }
+  prodcuts.doc(id).set(data);
+  return id;
+}
 }
