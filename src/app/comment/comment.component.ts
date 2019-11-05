@@ -11,7 +11,7 @@ import { CommentsService } from '../services/comments.service';
 })
 export class CommentComponent implements OnInit {
   public sendEd: boolean = false;
-  public comentario: Comment = new Comment("", null, "", "");
+  public comentario: Comment = new Comment("", 0, "", "");
   public user: User;
   constructor(
     public auth: AuthGService,
@@ -24,13 +24,13 @@ export class CommentComponent implements OnInit {
           if (comment) {
             this.comentario = comment;
           } else {
-            this.comentario = new Comment("", null, "", "");
+            this.comentario = new Comment("", 0, "", "");
           }
         });
       }
     });
   }
-  ngOnInit() {    
+  ngOnInit() {
   }
   submitComment() {
     const date = new Date;
@@ -47,6 +47,9 @@ export class CommentComponent implements OnInit {
         this.sendEd = false;
       }, 5000);
     }
+  }
+  counter(i: number) {
+    return new Array(i);
   }
   setRAting(rating: number) {
     this.comentario.rating = rating;

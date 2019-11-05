@@ -1,0 +1,17 @@
+<div class="container">
+    <h4 class="text-center">Encontramos estos productos de <span class="font-weight-bold">{{ producto }}</span> para ti!</h4>
+    {{ prd.products$ | async | json }}
+    <div *ngIf="productList" class="row">
+        <div *ngFor="let prod of productList" class="col-4">
+            <div class="card">
+                <div class="card-body">
+                    <h3>{{prod.name}}</h3>
+                    <p>Precio: {{prod.price}}</p>
+                    <span>Ubicacion: {{prod.location}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

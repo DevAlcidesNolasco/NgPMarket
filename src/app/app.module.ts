@@ -23,6 +23,7 @@ import { EnterpriseComponent } from './enterprise/enterprise.component';
 import { DropzoneDirective } from './dropzone.directive';
 import { UploaderComponent } from './enterprise/uploader/uploader.component';
 import { UploadTaskComponent } from './enterprise/upload-task/upload-task.component';
+import { SearchComponent } from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,12 +39,13 @@ import { UploadTaskComponent } from './enterprise/upload-task/upload-task.compon
     EnterpriseComponent,
     DropzoneDirective,
     UploaderComponent,
-    UploadTaskComponent
+    UploadTaskComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
+    AppRoutingModule,   
+    FormsModule, 
     AngularFireModule.initializeApp(environment.firebase),
     AgmCoreModule.forRoot({
       apiKey: environment.googleMapsKey

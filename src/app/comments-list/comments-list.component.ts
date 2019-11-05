@@ -19,6 +19,9 @@ export class CommentsListComponent implements OnInit {
   ngOnInit() {
   //  this.getComments();
   }
+  counter(i: number) {
+    return new Array(i);
+  }
   //async getComments() {
     //await 
   //}

@@ -7,6 +7,7 @@ import { AfiliatedsComponent } from './afiliateds/afiliateds.component';
 import { AuthGuard } from './auth/auth.guard';
 import { MapComponent } from './map/map.component';
 import { EnterpriseComponent } from './enterprise/enterprise.component';
+import { SearchComponent } from './search/search.component';
 const routes: Routes = [
   {
     path: 'profile',
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'information/afiliated',
     component: AfiliatedsComponent
+  },
+  {
+    path: 'search/:producto',
+    component: SearchComponent
   },
   {
     path: '**',

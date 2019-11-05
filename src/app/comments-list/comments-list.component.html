@@ -1,14 +1,7 @@
 <ul class="list-group list-group-flush">
     <li *ngFor="let comentss of lista" class="list-group-item text-center">
-        {{ comentss.rating }} X<i class="star fas fa-star text-warning ml-2"></i>
-        <!--<p class="border-bottom stars-rating d-flex justify-content-between py-2 mx-3"
-            rating="comentss.rating">
-            
-            <i class="star fas fa-star text-warning mx-1" rating="2"></i>
-            <i class="star fas fa-star text-warning mx-1" rating="3"></i>
-            <i class="star fas fa-star-half-alt text-warning mx-1" rating="4"></i>
-            <i class="star far fa-star text-warning mx-1" rating="5"></i>
-        </p>-->
+        <i *ngFor="let in of counter(comentss.rating); let i = index" class="my-star fas fa-star text-warning mx-1" ></i>
+        <i *ngFor="let in of counter(5 - comentss.rating); let i = index" class="my-star far fa-star text-warning mx-1" ></i>
         <blockquote class="blockquote text-center">
             <p class="mb-0" *ngIf="comentss.comment">{{comentss.comment}}</p>
             <footer class="blockquote-footer">{{comentss.displayName}} - <cite

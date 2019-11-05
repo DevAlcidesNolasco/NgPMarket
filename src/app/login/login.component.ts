@@ -13,6 +13,6 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
+  }  
   //[(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
 }
