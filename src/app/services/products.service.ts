@@ -16,13 +16,10 @@ export class ProductsService {
     let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection<Product>(`Products`, ref => ref.where("key_words", "array-contains", search));
     this.products$ = prodcuts.valueChanges();
   }
-  addProduct({name,key_words,price,type}: Product){
+  addProduct(producto: Product){
   const id = this.afs.createId();
-  let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection<Product>(`Products`);
-  const data = {
-    name, key_words, price, type
-  }
-  prodcuts.doc(id).set(data);
+  let prodcuts: AngularFirestoreCollection<Product> = this.afs.collection<Product>(`Products`);  
+  prodcuts.doc(id).set(producto);
   return id;
 }
 }

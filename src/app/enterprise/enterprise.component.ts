@@ -18,10 +18,11 @@ export class EnterpriseComponent implements OnInit {
     console.log(this.product);
   }
   create(){
-    this.idProduct = this.prodService.addProduct(this.product);
+    this.idProduct = this.prodService.addProduct(Object.assign({}, this.product));
+    console.log(this.idProduct);
   }
   saveProduct(){
-    console.log(this.product);
+    console.log(this.idProduct);
   }
 
 }
